@@ -20,11 +20,11 @@ bool badYears(string, int &);
 
 int main()
 {
-	bool valid = false;
-	string input;
-	double loan,
-		   rate;
-	int years;
+	bool valid = false; // Incorrect data entry.
+	string input; // Users input in string.
+	double loan, // Users input in double.
+		   rate; // Users input in double.
+	int years; // Users input in int.
 
 	cout << "---Mortgage Payment----" << endl;
 
@@ -80,20 +80,27 @@ int main()
 
 	} while (!valid);
 
-	cout << showpoint << setprecision(2);
+	Mortgage m1(loan, rate, years); // Mortgage payment.
 
-	Mortgage mort(loan, rate, years);
-
-	cout << "\nMonthly Payment: " << mort.payment() << endl;
-	cout << "\nTotal amount paid to the bank: " << mort.total() << endl;
+	cout << fixed << setprecision(2);
+	cout << "\nMonthly Payment: $" << m1.payment() << endl;
+	cout << "\nTotal amount paid to the bank: $" << m1.total() << endl;
 
 	return 0;
 }
 
+//==============================================
+// badLoan: Determines if users input was valid.
+// Parameters:
+// input: Users input in string.
+// loan: Users input in int.
+// Return Type: bool (validLoan).
+//==============================================
+
 bool badLoan(string input, double &loan)
 {
-	bool validLoan = true;
-	double num; 
+	bool validLoan = true; // Valid input.
+	double num; // Users input changed.
 
 	try
 	{
@@ -106,13 +113,21 @@ bool badLoan(string input, double &loan)
 		validLoan = false;
 	}
 
-	return validLoan; 
+	return validLoan; // Returns valid loan.
 }
+
+//==============================================
+// badRate: Determines if users input was valid.
+// Parameters:
+// input: Users input in string.
+// rate: Users input in int.
+// Return Type: bool (validRate).
+//==============================================
 
 bool badRate(string input, double &rate)
 {
-	bool validRate = true; 
-	double num; 
+	bool validRate = true; // Valid input.
+	double num; // Users input changed.
 
 	try
 	{
@@ -125,13 +140,21 @@ bool badRate(string input, double &rate)
 		validRate = false;
 	}
 
-	return validRate;
+	return validRate; // Returns valid rate.
 }
+
+//===============================================
+// badYears: Determines if users input was valid.
+// Parameters:
+// input: Users input in string.
+// years: Users input in int.
+// Return Type: bool (validYears).
+//===============================================
 
 bool badYears(string input, int &years)
 {
-	bool validYears = true;
-	int num;
+	bool validYears = true; // Valid input.
+	int num; // Users input changed.
 
 	try
 	{
@@ -144,5 +167,5 @@ bool badYears(string input, int &years)
 		validYears = false;
 	}
 
-	return validYears;
+	return validYears; // Returns valid years.
 }

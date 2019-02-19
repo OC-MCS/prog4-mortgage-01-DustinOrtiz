@@ -2,12 +2,12 @@
 #pragma once
 using namespace std;
 
-class Mortgage
+class Mortgage // Mortgage information
 {
 	private:
-		double loan;
-		double rate;
-		int years;
+		double loan; // Loan data.
+		double rate; // Rate data.
+		int years; // Years data.
 		double term();
 	public:
 		Mortgage(double, double, int);
