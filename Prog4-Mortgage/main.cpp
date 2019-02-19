@@ -26,7 +26,7 @@ int main()
 		   rate; // Users input in double.
 	int years; // Users input in int.
 
-	cout << "---Mortgage Payment----" << endl;
+	cout << "\n---Mortgage Payment----" << endl;
 
 	do
 	{
